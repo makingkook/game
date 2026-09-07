@@ -77,12 +77,12 @@ docker run --rm -p 8080:8080 stick-deathmatch:latest
 ## ECR에 이미지 업로드
 
 ```bash
-export AWS_ACCOUNT_ID=<계정ID>
-export AWS_REGION=ap-northeast-2
-export REPO=stick-deathmatch
+$env:AWS_ACCOUNT_ID="950274644703"
+$env:AWS_REGION="ap-northeast-1"
+$env:REPO="game"
 
 # 리포지토리 생성 (최초 1회)
-aws ecr create-repository --repository-name $REPO --region $AWS_REGION
+aws ecr create-repository --repository-name $env:REPO --region $env:AWS_REGION
 
 # 로그인
 aws ecr get-login-password --region $AWS_REGION \
